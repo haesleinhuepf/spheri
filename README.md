@@ -7,7 +7,9 @@ mamba install vedo=2024.5.1
 ```
 
 ```
-pip install soli
+git clone https://github.com/haesleinhuepf/soli.git
+cd soli
+pip install -e .
 ```
 
 
