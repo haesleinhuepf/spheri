@@ -1,0 +1,16 @@
+
+.idea/bia-bob.iml
+
+build/
+dist/
+.idea/
+
+*/.ipynb_checkpoints/*
+*/blablado.egg-info/*
+*__pycache__*
+
+*Untitled*
+
+
+deploy.bat
+demo/P1_H_C3H_M004_17-cropped.tif

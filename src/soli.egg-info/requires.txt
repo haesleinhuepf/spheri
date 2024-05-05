@@ -1,0 +1,8 @@
+numpy
+vedo
+scikit-image
+
+[testing]
+tox
+pytest
+pytest-cov

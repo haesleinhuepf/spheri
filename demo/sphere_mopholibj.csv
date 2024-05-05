@@ -1,0 +1,2 @@
+Label,VoxelCount,Volume,SurfaceArea,MeanBreadth,Sphericity,EulerNumber,Box.X.Min,Box.X.Max,Box.Y.Min,Box.Y.Max,Box.Z.Min,Box.Z.Max,Centroid.X,Centroid.Y,Centroid.Z,Elli.Center.X,Elli.Center.Y,Elli.Center.Z,Elli.R1,Elli.R2,Elli.R3,Elli.Azim,Elli.Elev,Elli.Roll,Elli.R1/R2,Elli.R1/R3,Elli.R2/R3,InscrBall.Center.X,InscrBall.Center.Y,InscrBall.Center.Z,InscrBall.Radius
+1,267761,267761,20068.667,80.303,1.003,1,10,91,10,91,10,91,50.500,50.500,50.500,50.500,50.500,50.500,39.989,39.989,39.989,0,-0,0,1,1,1,50,50,50,38.333

@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/soli/__init__.py
+src/soli/_statistics.py
+src/soli.egg-info/PKG-INFO
+src/soli.egg-info/SOURCES.txt
+src/soli.egg-info/dependency_links.txt
+src/soli.egg-info/requires.txt
+src/soli.egg-info/top_level.txt

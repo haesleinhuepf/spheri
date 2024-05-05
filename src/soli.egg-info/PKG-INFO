@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: soli
+Version: 0.1.0
+Summary: A library for feature extraction from 3D label images
+Home-page: https://github.com/haesleinhuepf/soli
+Author: Robert Haase
+Author-email: robert.haase@uni-leipzig.de
+License: BSD-3-Clause
+Project-URL: Bug Tracker, https://github.com/haesleinhuepf/soli/issues
+Project-URL: Documentation, https://github.com/haesleinhuepf/soli#README.md
+Project-URL: Source Code, https://github.com/haesleinhuepf/soli
+Project-URL: User Support, https://github.com/haesleinhuepf/soli/issues
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: vedo
+Requires-Dist: scikit-image
+Provides-Extra: testing
+Requires-Dist: tox; extra == "testing"
+Requires-Dist: pytest; extra == "testing"
+Requires-Dist: pytest-cov; extra == "testing"
+
+# soli - a library for feature extraction from 3D label images
+
+## Installation
+
+```
+mamba install vedo=2024.5.1
+```
+
+```
+pip install soli
+```
+
+
+
