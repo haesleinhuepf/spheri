@@ -1,4 +1,6 @@
 
+DEFAULT_SMOOTH_ITERATIONS = 15
+
 def sphericity_wadell(volume, surface_area):
     # "Hakon Wadell defined sphericity as the surface area of a sphere of the same volume as the particle divided by the actual surface area of the particle."
     # https://en.wikipedia.org/wiki/Sphericity
@@ -14,7 +16,7 @@ def sphericity_legland(volume, surface_area):
 def solidity(surface_volume, convex_hull_volume):
     return surface_volume / convex_hull_volume
 
-def surface_meshes(label_image):
+def surface_meshes(label_image, smooth_iterations:int=DEFAULT_SMOOTH_ITERATIONS):
     import numpy as np
     import vedo
 
@@ -30,11 +32,20 @@ def surface_meshes(label_image):
         
         volume = vedo.Volume(extended_binary_image)
         surface = volume.isosurface(threshold=0.5)
-        result[label] = surface.clean()
+
+        surface = surface.clean()
+
+        # might work but takes very long time:
+        # surface = surface.smooth_mls_2d()
+        # might work but takes long time:
+        if smooth_iterations > 0:
+            surface = surface.smooth(niter=smooth_iterations)
+
+        result[label] = surface
     
     return result
 
-def measure(label_image):
+def measure(label_image, smooth_iterations:int=DEFAULT_SMOOTH_ITERATIONS):
     import numpy as np
     import pandas as pd
     import math
@@ -51,7 +62,7 @@ def measure(label_image):
         "sphericity_legland":[],
     }
     
-    for label, surface in surface_meshes(label_image).items():
+    for label, surface in surface_meshes(label_image, smooth_iterations=smooth_iterations).items():
         
         convex_hull = vedo.shapes.ConvexHull(surface)
 
