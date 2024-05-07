@@ -17,6 +17,7 @@ def solidity(surface_volume, convex_hull_volume):
 def surface_meshes(label_image):
     import numpy as np
     import vedo
+    _hide_vtk_warnings()
 
     result = {}
     for label in np.unique(label_image):
@@ -39,6 +40,7 @@ def measure(label_image):
     import pandas as pd
     import math
     import vedo
+    _hide_vtk_warnings()
     
     result = {
         "label":[],
@@ -71,3 +73,12 @@ def measure(label_image):
         result["sphericity_legland"].append(sphericity_legland(surface_volume, surface_area))
 
     return pd.DataFrame(result)
+
+
+def _hide_vtk_warnings():
+    from vtkmodules.vtkCommonCore import vtkObject
+    vtkObject.GlobalWarningDisplayOff()
+
+
+
+
