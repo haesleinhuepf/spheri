@@ -14,3 +14,10 @@ pip install -e .
 
 
 
+## Similar software
+
+There are other open source software projects available which offer similar functionality:
+* https://imagej.net/plugins/morpholibj
+* https://imagej.net/plugins/3d-imagej-suite/
+* https://github.com/geosharma/sphericity_and_roundness
+* https://pyradiomics.readthedocs.io/
