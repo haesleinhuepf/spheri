@@ -30,7 +30,7 @@ def surface_meshes(label_image):
         extended_binary_image[1:-1,1:-1,1:-1] = binary_image
         
         volume = vedo.Volume(extended_binary_image)
-        surface = volume.isosurface(threshold=0.5)
+        surface = volume.isosurface(0.5)
         result[label] = surface.clean()
     
     return result
@@ -40,6 +40,7 @@ def measure(label_image):
     import pandas as pd
     import math
     import vedo
+    import diplib as dip
     _hide_vtk_warnings()
     
     result = {
@@ -51,10 +52,11 @@ def measure(label_image):
         "solidity":[],
         "sphericity_wadell":[],
         "sphericity_legland":[],
+        "sphericity_diplib":[],
     }
     
     for label, surface in surface_meshes(label_image).items():
-        
+
         convex_hull = vedo.shapes.ConvexHull(surface)
 
         surface_area = surface.area()
@@ -71,6 +73,13 @@ def measure(label_image):
         result["solidity"].append(solidity(surface_volume, convex_hull_volume))
         result["sphericity_wadell"].append(sphericity_wadell(surface_volume, surface_area))
         result["sphericity_legland"].append(sphericity_legland(surface_volume, surface_area))
+
+        binary_image = np.asarray((label_image == label) * 1).astype(np.uint8)
+        measurement = dip.MeasurementTool.Measure(binary_image, binary_image, features=["SurfaceArea", "P2A", "Size"])
+        result["sphericity_diplib"].append(measurement["P2A"][1][0])
+
+
+
 
     return pd.DataFrame(result)
 

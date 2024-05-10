@@ -1,14 +1,18 @@
-# soli - a library for feature extraction from 3D label images
+# spheri - a library for feature extraction from 3D label images
 
 ## Installation
 
-```
+´´´
 mamba install vedo=2024.5.1
+´´´
+
+```
+pip install diplib
 ```
 
 ```
-git clone https://github.com/haesleinhuepf/soli.git
-cd soli
+git clone https://github.com/haesleinhuepf/spheri.git
+cd spheri
 pip install -e .
 ```
 
